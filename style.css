@@ -1,0 +1,125 @@
+body{
+    /* background-color: black; */
+}
+
+.infinity_holder {
+    position: absolute;
+    height: 100px;
+    width: 50px;
+    top: 50%;
+    left: 50%;
+}
+
+.infinity {
+    position: relative;
+    display: block;
+    width: 90;
+    height: 40;
+}
+
+.moreballs::before,
+.moreballs::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(95, 184, 145, 0.358);
+    border-radius: 50%;
+    content: "";
+
+    /* box-shadow:
+    inset 0 0 50px #fff,
+    inset 20px 0 80px #f0f,
+    inset -20px 0 80px #0ff,
+    inset 20px 0 300px #f0f,
+    inset -20px 0 300px #0ff,
+    0 0 50px #fff,
+    -10px 0 80px #f0f,
+    10px 0 80px #0ff; */
+
+    animation: infinity 1900ms cubic-bezier(0.645, 0.045, 0.355, 1) infinite;
+    /* offset-path: path("M10 10 H 90 V 90 H 10 L 10 10"); */
+    /* offset-path: path("M10 80 Q 52.5 10, 95 80 T 180 80"); */
+    offset-path: path("M23.71 5.21l17.58 17.58a12.43 12.43 0 0 0 17.57 0 12.43 12.43 0 0 0 0-17.57 12.43 12.43 0 0 0-17.57 0L23.71 22.79a12.43 12.43 0 0 1-17.57 0 12.43 12.43 0 0 1 0-17.57 12.43 12.43 0 0 1 17.57-.01z");
+}
+
+.moreballs::after {
+    animation-delay: 50ms;
+}
+
+.moreballs::before {
+    animation-delay: 150ms;
+}
+
+.infinity:hover::before,
+.infinity:hover::after {
+    /* background-color: rgb(175, 93, 60); */
+}
+
+.infinity::before,
+.infinity::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: rgb(120, 151, 138);
+    border-radius: 50%;
+    content: "";
+
+    /* box-shadow:
+    inset 0 0 50px #fff,
+    inset 20px 0 80px #f0f,
+    inset -20px 0 80px #0ff,
+    inset 20px 0 300px #f0f,
+    inset -20px 0 300px #0ff,
+    0 0 50px #fff,
+    -10px 0 80px #f0f,
+    10px 0 80px #0ff; */
+}
+
+.infinity::before,
+.infinity::after {
+    /* offset-path: path("M10 10 H 90 V 90 H 10 L 10 10"); */
+    offset-path: path("M23.71 5.21l17.58 17.58a12.43 12.43 0 0 0 17.57 0 12.43 12.43 0 0 0 0-17.57 12.43 12.43 0 0 0-17.57 0L23.71 22.79a12.43 12.43 0 0 1-17.57 0 12.43 12.43 0 0 1 0-17.57 12.43 12.43 0 0 1 17.57-.01z");
+}
+
+@keyframes infinity {
+    0% {
+        offset-distance: 0%;
+        width: 10px;
+        height: 10px;
+    }
+    50% {
+        offset-distance: 50%;
+        width: 15px;
+        height: 15px;
+        background-color: rgb(56, 184, 5);
+    }
+    100% {
+        offset-distance: 100%;
+        width: 10px;
+        height: 10px;
+    }
+}
+
+@keyframes moreballs {
+    0% {
+        offset-distance: 0%;
+    }
+    100% {
+        offset-distance: 100%;
+    }
+}
+
+.infinity::before,
+.infinity::after {
+    animation: infinity 1900ms cubic-bezier(0.645, 0.045, 0.355, 1) infinite;
+}
+
+.infinity::after {
+    animation-delay: 200ms;
+}
